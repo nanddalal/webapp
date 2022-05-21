@@ -6,7 +6,6 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  # IMAGE_NAME: ${{ github.repository }}:${{ github.sha }}
   IMAGE_NAME: ${{ github.repository }}
 
 jobs:
@@ -45,8 +44,8 @@ jobs:
 
   run-tests:
     needs: build-and-push-image
-    # runs-on: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-    runs-on: ghcr.io/nanddalal/webapp:main
+    container:
+      image: ghcr.io/nanddalal/webapp:main
 
     steps:
       - name: Run tests in the previously built bazel docker
