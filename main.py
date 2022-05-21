@@ -2,6 +2,7 @@ import numpy as np
 
 
 def main():
+    raise
     print("Hello World")
 
 
