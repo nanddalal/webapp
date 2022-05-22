@@ -1,8 +1,8 @@
-import numpy as np
+import sample_module
 
 
 def main():
-    print("Hello World")
+    print(sample_module.sample_function())
 
 
 if __name__ == "__main__":
