@@ -49,9 +49,9 @@ py_binary(
     name = "server",
     srcs = ["server.py"],
     deps = [
-        requirement("grpcio-tools"),
         ":prime_proto_pb2",
         ":prime_proto_pb2_grpc",
+        requirement("grpcio-tools"),
     ],
 )
 
