@@ -51,6 +51,14 @@ jobs:
         #with:
           #submodules: recursive
 
+      - name: Setup cache
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache
+          key: cache-${{ github.ref_name }}
+          restore-keys: |
+            cache-main
+
       - name: Run tests in the previously built bazel docker
         run: |
           bazel test --test_output=errors //...
