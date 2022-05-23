@@ -55,9 +55,9 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/.cache
-          key: cache-${{ github.ref_name }}
+          key: cache-${{ github.sha }}
           restore-keys: |
-            cache-main
+            cache-
 
       - name: Run tests in the previously built bazel docker
         run: |
